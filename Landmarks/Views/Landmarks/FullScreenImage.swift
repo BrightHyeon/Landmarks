@@ -13,7 +13,7 @@ struct FullScreenImage: View {
     var body: some View {
         image
             .resizable()
-            .aspectRatio(contentMode: .fit)
+            .scaledToFit() // = aspectRatio(contentMode: .fit)
     }
 }
 
