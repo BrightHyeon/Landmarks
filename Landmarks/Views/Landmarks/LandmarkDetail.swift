@@ -20,14 +20,16 @@ struct LandmarkDetail: View {
             MapView(coordinate: landmark.locationCoordinate)
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
+                .padding(.bottom, -130)
             
             //화면전환 액션을 위해 Link화. 상위뷰에 NavigationView설정 되어있음.
             NavigationLink {
                 FullScreenImage(image: landmark.image)
             } label: {
                 CircleImage(image: landmark.image)
-                    .offset(y: -130) //이미지 위로 올리기(맵뷰에 담기)
-                    .padding(.bottom, -130) //이미지 올려도 패딩은 그대로니
+//                    .offset(y: -130) //이미지 위로 올리기(맵뷰에 담기)
+//                    .padding(.bottom, -130.0) //이미지 올려도 패딩은 그대로니
+                    .padding()
             }
             
             VStack(alignment: .leading) { //VStack의 이니셜라이저 편집

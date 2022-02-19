@@ -10,6 +10,7 @@ import Combine //ObservableObject 사용위함.
 
 final class ModelData: ObservableObject { //직역하면 '관찰가능한객체'
     //관찰가능한객체는 구독자가 변경사항을 선택할 수 있도록 데이터에 대한 모든 변경 사항을 게시해야합니다.
+    //ObservableObject프로토콜을 준수하는 ModelData클래스는 관찰대상이고, @Published 변수는 변경을 감지할 변수이다. (publish; 데이터에 대한 모든 변경사항을 게시. ModelData란 관찰가능객체 안에 변경사항을 게시하는 Published변수가 있는 것..?)
     @Published var landmarks: [Landmark] = load("landmarkData.json") //기존 landmarks를 이 class안으로 가져오기.
 }
 
